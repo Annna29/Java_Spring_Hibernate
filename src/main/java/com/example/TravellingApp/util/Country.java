@@ -1,4 +1,4 @@
-package com.example.TravellingApp;
+package com.example.TravellingApp.util;
 
 public enum Country {
     UNKNOWN(0),
