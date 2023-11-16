@@ -1,20 +1,28 @@
 package com.example.TravellingApp.entities;
 
-public class Profil {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Profile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id;
    private String name;
    private String email;
 
-    public Profil() {
+    public Profile() {
     }
 
-    public Profil(int id, String name, String email) {
+    public Profile(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public Profil(String name, String email) {
+    public Profile(String name, String email) {
         this.name = name;
         this.email = email;
     }

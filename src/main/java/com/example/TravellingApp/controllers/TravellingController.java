@@ -11,6 +11,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping(path="/destinations")
 public class TravellingController {
 
     private TravellingService travellingService;
