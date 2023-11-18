@@ -18,4 +18,8 @@ public class TravellingService {
     public List<Destination> getAllDestinations(){
         return travellingRepository.getAllDestinations();
     }
+
+    public Destination getDestinationById(int id) {
+        return travellingRepository.getDestinationById(id);
+    }
 }

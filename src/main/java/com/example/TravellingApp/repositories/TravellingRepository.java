@@ -22,4 +22,9 @@ public class TravellingRepository {
 
 
     }
+
+    public Destination getDestinationById(int id) {
+        Destination foundDestination = entityManager.find(Destination.class,id);
+        return foundDestination;
+    }
 }
