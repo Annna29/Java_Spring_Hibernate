@@ -25,6 +25,7 @@ public class TravellingRepository {
 
     public Destination getDestinationById(int id) {
         Destination foundDestination = entityManager.find(Destination.class,id);
+       // System.out.println(foundDestination.getHotelName()+" " + foundDestination.getCountry());
         return foundDestination;
     }
 }
