@@ -22,4 +22,33 @@ public class TravellingService {
     public Destination getDestinationById(int id) {
         return travellingRepository.getDestinationById(id);
     }
+
+
+    public List<Destination> getPetFriendlyDestination() {
+        return travellingRepository.getPetFriendlyDestination();
+    }
+
+    public List<Destination> getNotFriendlyDestination() {
+        return travellingRepository.getNotFriendlyDestination();
+    }
+
+    public List<Destination> getDestinationByHotelName(String hotelName) {
+        return travellingRepository.getDestinationByHotelName(hotelName);
+    }
+
+    public List<Destination> getDestinationByPet(boolean isPetFriendly) {
+        return travellingRepository.getDestinationByPet(isPetFriendly);
+    }
+
+    public List<Destination> getDestinationByCountry(String countryName) {
+        return travellingRepository.getDestinationByCountry(countryName);
+    }
+
+    public List<Destination> getDestinationByHotelRating(int hotelRating) {
+        return travellingRepository.getDestinationByHotelRating(hotelRating);
+    }
+
+    public List<Destination> getDestinationByPriceRange(int min, int max) {
+        return travellingRepository.getDestinationByPriceRange(min,max);
+    }
 }

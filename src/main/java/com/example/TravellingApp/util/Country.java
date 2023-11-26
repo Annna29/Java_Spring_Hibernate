@@ -20,8 +20,11 @@ public enum Country {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
 
-    public Country convertCountryById( int id){
+    public Country convertCountryById(int id){
 
         for (Country c : Country.values()) {
             if(id==c.id)

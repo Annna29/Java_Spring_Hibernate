@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+
 
 @Entity
 public class Destination {
@@ -12,6 +14,7 @@ public class Destination {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private  int id;
    private boolean isPetFriendly;
+   @NotNull
    private String hotelName;
    private int price;
    private int hotelRating;

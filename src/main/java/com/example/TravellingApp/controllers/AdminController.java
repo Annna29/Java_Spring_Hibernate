@@ -2,6 +2,8 @@ package com.example.TravellingApp.controllers;
 
 import com.example.TravellingApp.entities.Destination;
 import com.example.TravellingApp.services.AdminService;
+//import jakarta.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +26,12 @@ public class AdminController {
 
     }
     @PostMapping
-    public ResponseEntity<Destination> addNewDestination(@RequestBody Destination destination){
+    public ResponseEntity<Destination> addNewDestination(@Valid @RequestBody Destination destination){
          return new ResponseEntity<>(adminService.addNewDestination(destination), HttpStatus.CREATED);
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public ResponseEntity<Destination> updateDestinationById(@RequestBody Destination destination){
          return new ResponseEntity<>(adminService.updateDestinationById(destination), HttpStatus.CREATED);
 
