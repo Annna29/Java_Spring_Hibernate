@@ -94,4 +94,14 @@ public class TravellingRepository {
         return results.getResultList();
 
     }
+
+    public List<Destination> getDestinationByCustomFilter(int min, int max, int hotelMin, int hotelMax) {
+        TypedQuery<Destination> results = entityManager.createQuery("FROM Destination WHERE price>=:min AND price<= :max " +
+                "AND hotelRating>= :hotelMin AND hotelRating<=:hotelMax AND isPetFriendly = true", Destination.class);
+        results.setParameter("min",min);
+        results.setParameter("max",max);
+        results.setParameter("hotelMin",hotelMin);
+        results.setParameter("hotelMax", hotelMax);
+        return results.getResultList();
+    }
 }

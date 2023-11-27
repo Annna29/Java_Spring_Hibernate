@@ -49,4 +49,8 @@ public class TravellingService {
     public List<Destination> getDestinationByPriceRange(int min, int max) {
         return travellingRepository.getDestinationByPriceRange(min,max);
     }
+
+    public List<Destination> getDestinationByCustomFilter(int min, int max, int hotelMin, int hotelMax) {
+        return travellingRepository.getDestinationByCustomFilter(min,max,hotelMin,hotelMax);
+    }
 }

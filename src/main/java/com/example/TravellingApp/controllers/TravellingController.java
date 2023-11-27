@@ -72,6 +72,13 @@ public class TravellingController {
         return new ResponseEntity<>(travellingService.getDestinationByPriceRange(min,max),HttpStatus.OK);
     }
 
+    // get all destinations with price range, hotel rating range and pet friendly location
+    @GetMapping("/custom-destination")
+    public ResponseEntity<List<Destination>>getDestinationByCustomFilter(@RequestParam @Min(100) @Max(6000) int min, @RequestParam @Min(100) @Max(6000) int max,
+                                                                         @RequestParam @Min(1) @Max(5) int hotelMin, @RequestParam @Min(1)@Max(5) int hotelMax){
+        return new ResponseEntity<>(travellingService.getDestinationByCustomFilter(min,max,hotelMin,hotelMax), HttpStatus.OK);
+    }
+
 
 
 }
