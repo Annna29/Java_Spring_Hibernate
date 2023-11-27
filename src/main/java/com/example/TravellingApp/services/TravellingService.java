@@ -28,9 +28,7 @@ public class TravellingService {
         return travellingRepository.getPetFriendlyDestination();
     }
 
-    public List<Destination> getNotFriendlyDestination() {
-        return travellingRepository.getNotFriendlyDestination();
-    }
+
 
     public List<Destination> getDestinationByHotelName(String hotelName) {
         return travellingRepository.getDestinationByHotelName(hotelName);

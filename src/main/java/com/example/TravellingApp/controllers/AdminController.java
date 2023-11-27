@@ -18,19 +18,19 @@ public class AdminController {
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }
-
+     // delete destination by id
     @DeleteMapping("/{id}")
     public void deleteDestinationById(@PathVariable int id){
          adminService.deleteDestinationById(id);
-
-
     }
+
+    // add a new destination
     @PostMapping
     public ResponseEntity<Destination> addNewDestination(@Valid @RequestBody Destination destination){
          return new ResponseEntity<>(adminService.addNewDestination(destination), HttpStatus.CREATED);
 
     }
-
+    // update a destination
     @PutMapping
     public ResponseEntity<Destination> updateDestinationById(@RequestBody Destination destination){
          return new ResponseEntity<>(adminService.updateDestinationById(destination), HttpStatus.CREATED);

@@ -36,10 +36,7 @@ public class TravellingRepository {
         return results.getResultList();
     }
 
-    public List<Destination> getNotFriendlyDestination() {
-        TypedQuery<Destination> results = entityManager.createQuery("FROM Destination WHERE isPetFriendly = false", Destination.class);
-        return results.getResultList();
-    }
+
 
     public List<Destination> getDestinationByHotelName(String hotelName) {
         TypedQuery<Destination> results = entityManager.createQuery("FROM Destination WHERE hotelName like :hotelName", Destination.class);

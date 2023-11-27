@@ -18,28 +18,28 @@ public class UserController {
         this.userService = userService;
     }
 
-
+    // add a new user
     @PostMapping
     public ResponseEntity<User>addUser (@RequestBody User user){
       return new ResponseEntity<>(userService.addUser(user), HttpStatus.CREATED);
     }
-
+   // get user by id
     @GetMapping("/{id}")
     public ResponseEntity<User>findUserById(@PathVariable  int id){
       return new ResponseEntity<>(userService.findUserById(id), HttpStatus.OK);
     }
-
+    // get all users
     @GetMapping
      public ResponseEntity<List<User>> getAllUsers(){
      return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
-
+    // delete user by id
     @DeleteMapping("/{id}")
      public ResponseEntity<Void>deleteUserById(@PathVariable int id){
       userService.deleteUserById(id);
     return new ResponseEntity(HttpStatus.OK);
     }
-
+    // update a user
     @PutMapping
     public ResponseEntity<User> updateUser(@RequestBody User user){
 
